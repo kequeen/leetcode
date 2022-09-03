@@ -6,6 +6,12 @@ type treeNode struct {
 	val   interface{}
 }
 
+type TreeNode struct {
+	left  *treeNode
+	right *treeNode
+	val   interface{}
+}
+
 func nodeInit() *treeNode {
 	return &treeNode{}
 }

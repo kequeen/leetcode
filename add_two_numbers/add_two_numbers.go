@@ -13,24 +13,21 @@ type ListNode struct {
 // 你可以假设除了数字 0 之外，这两个数都不会以 0 开头。
 // 其实我理解这套题目就是大数相加
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	//其实可以将链表反转
-	reverseL1 := reverseList(l1)
-	reverseL2 := reverseList(l2)
 	var res *ListNode
 	var l3 *ListNode
 	carry := 0
-	for reverseL1 != nil || reverseL2 != nil {
+	for l1 != nil || l2 != nil {
 		current := 0
-		if reverseL1 != nil && reverseL2 == nil {
-			current = reverseL1.Val + carry
-			reverseL1 = reverseL1.Next
-		} else if reverseL1 == nil && reverseL2 != nil {
-			current = reverseL2.Val + carry
-			reverseL2 = reverseL2.Next
+		if l1 != nil && l2 == nil {
+			current = l1.Val + carry
+			l1 = l1.Next
+		} else if l1 == nil && l2 != nil {
+			current = l2.Val + carry
+			l2 = l2.Next
 		} else {
-			current = reverseL1.Val + reverseL2.Val + carry
-			reverseL1 = reverseL1.Next
-			reverseL2 = reverseL2.Next
+			current = l1.Val + l2.Val + carry
+			l1 = l1.Next
+			l2 = l2.Next
 		}
 		num := current % 10
 		carry = current / 10
@@ -45,22 +42,12 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 			l3 = l3.Next
 		}
 	}
-
-	//新链表算完之后再反转
-	return reverseList(res)
-}
-
-//如果我再返回一个值，那内存如何分配，这样子考虑下来是否还是原地反转链表更合适
-func reverseList(head *ListNode) *ListNode {
-	var prev *ListNode
-	curr := head
-	for curr != nil {
-		next := curr.Next
-		curr.Next = prev
-		prev = curr
-		curr = next
+	if carry != 0 {
+		l3.Next = &ListNode{
+			Val: carry,
+		}
 	}
-	return prev
+	return res
 }
 
 func printList(l *ListNode) {

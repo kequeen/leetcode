@@ -30,7 +30,6 @@ func TestAddTwoNumbersTest(t *testing.T) {
 	node4.Next = node5
 
 	l3 := addTwoNumbers(node1, node4)
-	fmt.Println(l3)
 	for l3 != nil {
 		fmt.Println(l3.Val)
 		l3 = l3.Next

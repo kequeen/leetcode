@@ -2,6 +2,12 @@ package leetcode
 
 import "container/list"
 
+type TreeNode struct {
+	Left  *TreeNode
+	Right *TreeNode
+	Val   interface{}
+}
+
 //关于二叉树的层序遍历
 func levelOrder(root *TreeNode) [][]int {
 	result := make([][]int, 0)
@@ -22,7 +28,7 @@ func levelOrder(root *TreeNode) [][]int {
 			if node.Value.(*TreeNode).Right != nil {
 				q.PushBack(node.Value.(*TreeNode).Right)
 			}
-			arr = append(arr, node.Value.(*TreeNode).Val)
+			arr = append(arr, node.Value.(*TreeNode).Val.(int))
 			p.Remove(node)
 		}
 		if len(arr) != 0 {

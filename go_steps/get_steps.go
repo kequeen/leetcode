@@ -32,3 +32,10 @@ func GetSteps(x int) int {
 	fmt.Println(dpMap)
 	return dpMap[x]
 }
+
+func min(a int, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}

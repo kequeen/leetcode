@@ -10,7 +10,9 @@ func TestLevelOrder(t *testing.T) {
 	result = append(result, []int{1})
 	fmt.Println(result)
 
-	var root = initTreeNode()
+	var root = &TreeNode{
+		Val: 0,
+	}
 	root.Left = &TreeNode{
 		Val: 5,
 	}

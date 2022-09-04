@@ -39,7 +39,6 @@ func TestLock(t *testing.T) {
 	}()
 
 	time.Sleep(time.Second * 2)
-	return
 }
 
 func TestBufio(t *testing.T) {

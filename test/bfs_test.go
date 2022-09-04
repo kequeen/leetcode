@@ -6,7 +6,9 @@ import (
 )
 
 func TestBfs(t *testing.T) {
-	var root = initTreeNode()
+	var root = &TreeNode{
+		Val: 0,
+	}
 	root.Left = &TreeNode{
 		Val: 5,
 	}

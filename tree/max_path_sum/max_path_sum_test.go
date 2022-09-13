@@ -18,4 +18,6 @@ func TestMaxPathSum(t *testing.T) {
 
 	fmt.Println(maxPathSum(root))
 
+	fmt.Println(maxPathSumV2(root))
+
 }

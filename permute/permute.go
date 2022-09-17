@@ -22,5 +22,3 @@ func permute(nums []int) [][]int {
 	backtrace(nums, 0, len(nums))
 	return res
 }
-
-//回溯法

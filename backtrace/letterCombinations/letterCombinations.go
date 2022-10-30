@@ -5,13 +5,16 @@ package leetcode
 func letterCombinations(digits string) []string {
 	//这种组合问题就是标准的回溯法
 	res := make([]string, 0)
+	if len(digits) == 0 {
+		return res
+	}
 	digitsMap := map[byte]string{
 		'2': "abc",
 		'3': "def",
 		'4': "ghi",
 		'5': "jkl",
 		'6': "mno",
-		'7': "pgrs",
+		'7': "pqrs",
 		'8': "tuv",
 		'9': "wxyz",
 	}

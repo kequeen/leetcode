@@ -28,6 +28,10 @@ func TestDeleteNode(t *testing.T) {
 	//1 2 3
 	//1 3
 
+	deleteNodeV2(node1, 3)
+	fmt.Println()
+	printList(node1)
+
 }
 
 func printList(l *ListNode) {

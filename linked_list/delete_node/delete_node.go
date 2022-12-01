@@ -27,3 +27,46 @@ func deleteNode(node *ListNode) {
 	node.Val = node.Next.Val
 	node.Next = node.Next.Next
 }
+
+// 第二种版本的删除链表
+// https://leetcode.cn/problems/shan-chu-lian-biao-de-jie-dian-lcof/
+// 需要删除链表中的值
+func deleteNodeV2(head *ListNode, val int) *ListNode {
+	if head.Val == val {
+		return head.Next
+	}
+	prev := head
+	for prev != nil {
+		if prev.Val == val {
+			if prev.Next != nil {
+				//删除节点
+				prev.Val = prev.Next.Val
+				prev.Next = prev.Next.Next
+			} else {
+				//稍微有点想不明白空值为什么不行
+				prev = nil
+			}
+			break
+		}
+		prev = prev.Next
+	}
+	return head
+}
+
+// 双指针解法
+func deleteNodeV3(head *ListNode, val int) *ListNode {
+	if head.Val == val {
+		return head.Next
+	}
+	prev := head
+	cur := head.Next
+	for cur != nil && cur.Val != val {
+		prev = cur
+		cur = cur.Next
+	}
+	//就算是最后一位也不例外
+	if cur != nil {
+		prev.Next = cur.Next
+	}
+	return head
+}

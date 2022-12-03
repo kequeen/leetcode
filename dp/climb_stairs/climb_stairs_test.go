@@ -10,4 +10,6 @@ func TestClimbStairs(t *testing.T) {
 	fmt.Println(climbStairs(n))
 	fmt.Println(climbStairsV2(n))
 
+	fmt.Println(climbStairsV3(n))
+
 }

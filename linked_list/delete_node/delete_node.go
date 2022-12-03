@@ -70,3 +70,20 @@ func deleteNodeV3(head *ListNode, val int) *ListNode {
 	}
 	return head
 }
+
+// 跟同事聊了之后，还有一种更漂亮的解法，就是在前面+一个节点，可以把相关的问题都归一化
+// 这种表面上看来来增加了性能开销，但实际上确实更容易让人理解
+func deleteNodeV4(head *ListNode, val int) *ListNode {
+	newHead := &ListNode{
+		Val:  0,
+		Next: head,
+	}
+	for p := newHead; p.Next != nil; p = p.Next {
+		if p.Next.Val == val {
+			//删除节点
+			p.Next = p.Next.Next
+			break
+		}
+	}
+	return newHead.Next
+}

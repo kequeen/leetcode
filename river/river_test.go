@@ -14,4 +14,7 @@ func TestCanCrossRiver(t *testing.T) {
 
 	arr3 := []int{0, 1, 3, 6, 7, 10, 15}
 	fmt.Println(canCrossRiver(arr3))
+
+	arr4 := []int{0, 1, 3, 6, 7}
+	fmt.Println(canCrossRiver(arr4))
 }

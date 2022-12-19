@@ -15,7 +15,10 @@ func canCrossRiver(arr []int) bool {
 	maxStep := 1
 	//记录上次的值
 	lastValue := 0
+	//判断是否结束
+	end := true
 	for i := 1; i < len(arr); {
+		end = true
 		//如果下一步不满足条件
 		if arr[i]-current > maxStep+1 {
 			return false
@@ -23,6 +26,7 @@ func canCrossRiver(arr []int) bool {
 		//小于的maxStep - 1 的话，直接往前走
 		if arr[i]-current < maxStep-1 {
 			i++
+			end = false
 		}
 
 		//判断是否需要更新current 和 maxStep
@@ -33,5 +37,5 @@ func canCrossRiver(arr []int) bool {
 		maxStep = lastValue - current
 		current = lastValue
 	}
-	return true
+	return end
 }

@@ -1,10 +1,10 @@
 package leetcode
 
-//https://leetcode.cn/problems/jump-game/?favorite=2cktkvj
-//跳跃游戏
-//我理解其实就是一道动态规划的题目
-//这个的时间复杂度是O(n^2),空间复杂度是O(n)
-//直觉上应该有更佳的解法，看答案果然也有更佳的解法
+// https://leetcode.cn/problems/jump-game/?favorite=2cktkvj
+// 跳跃游戏
+// 我理解其实就是一道动态规划的题目
+// 这个的时间复杂度是O(n^2),空间复杂度是O(n)
+// 直觉上应该有更佳的解法，看答案果然也有更佳的解法
 func canJump(nums []int) bool {
 	if len(nums) == 0 {
 		return true
@@ -22,8 +22,9 @@ func canJump(nums []int) bool {
 	return dp[len(nums)-1]
 }
 
-//更优的解法，其实就是维护一个当前能到达的最大的位置
-//这个的时间复杂度是O(n),空间复杂度是O(1)
+// 这道题目确实明显应该是贪心的，以前没想到
+// 更优的解法，其实就是维护一个当前能到达的最大的位置
+// 这个的时间复杂度是O(n),空间复杂度是O(1)
 func canJumpV2(nums []int) bool {
 	numsLen := len(nums)
 	maxJump := 0

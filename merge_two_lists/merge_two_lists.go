@@ -5,8 +5,8 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//合并两个有序链表 是不是有点像归并排序
-//https://leetcode.cn/problems/merge-two-sorted-lists/?favorite=2cktkvj
+// 合并两个有序链表 是不是有点像归并排序
+// https://leetcode.cn/problems/merge-two-sorted-lists/?favorite=2cktkvj
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	h := &ListNode{}
 	l := h

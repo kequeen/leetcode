@@ -1,22 +1,15 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMovingAverageTest(t *testing.T) {
 	obj := Constructor(3)
-	param_1 := obj.Next(10)
-
-	fmt.Println(param_1)
-	param_2 := obj.Next(2)
-	fmt.Println(param_2)
-
-	param_3 := obj.Next(2)
-	fmt.Println(param_3)
-
-	param_4 := obj.Next(2)
-	fmt.Println(param_4)
-
+	assert.Equal(t, 1.0, obj.Next(1))
+	assert.Equal(t, 5.5, obj.Next(10))
+	assert.Equal(t, 4.666666666666667, obj.Next(3))
+	assert.Equal(t, 6.0, obj.Next(5))
 }

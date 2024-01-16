@@ -1,9 +1,9 @@
 package leetcode
 
-//计算器
-//https://leetcode.cn/leetbook/read/top-interview-questions/xa8q4g/
-//其实我理解就是两个栈可以搞定
-//还是想复杂了，甚至只需要一个栈，并且这种简单的栈，其实切片完全就可以模拟
+// 计算器
+// https://leetcode.cn/leetbook/read/top-interview-questions/xa8q4g/
+// 其实我理解就是两个栈可以搞定
+// 还是想复杂了，甚至只需要一个栈，并且这种简单的栈，其实切片完全就可以模拟
 func calculate(s string) int {
 	result := 0
 	stack := []int{}

@@ -1,5 +1,7 @@
 package leetcode
 
+// 比较标准的二分查找
+// https://leetcode.cn/problems/binary-search/
 func binarySearch(arr []int, target int) int {
 	left := 0
 	right := len(arr) - 1

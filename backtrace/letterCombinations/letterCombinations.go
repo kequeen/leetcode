@@ -1,7 +1,7 @@
 package leetcode
 
-//https://leetcode.cn/problems/letter-combinations-of-a-phone-number/?favorite=2cktkvj
-//电话号码的字母组合
+// https://leetcode.cn/problems/letter-combinations-of-a-phone-number/?favorite=2cktkvj
+// 电话号码的字母组合
 func letterCombinations(digits string) []string {
 	//这种组合问题就是标准的回溯法
 	res := make([]string, 0)

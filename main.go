@@ -24,7 +24,19 @@ func main() {
 	// k := <-ch
 	// fmt.Println(k)
 
-	concurrency()
+	// concurrency()
+	concurrencyV3()
+
+	// arr := [3]int{1, 2, 3}
+	// slice := arr[0:1]
+	// slice = append(slice, 4)
+	// fmt.Println(slice)
+	// fmt.Println(arr)
+
+	// slice = append(slice, 5, 6)
+	// fmt.Println(slice)
+	// fmt.Println(arr)
+
 }
 
 func concurrency() {
@@ -33,11 +45,10 @@ func concurrency() {
 	for _, v := range ids {
 		syncCalculateSum := func() {
 			fmt.Println(v)
-			wg.Done()
 		}
 		wg.Add(1)
 		ants.Submit(syncCalculateSum)
-
+		wg.Done()
 	}
 	wg.Wait()
 	fmt.Printf("finish all tasks.\n")
@@ -56,4 +67,20 @@ func concurrencyV2() {
 	}
 	wg.Wait()
 	fmt.Printf("finish all tasks.\n")
+}
+
+func concurrencyV3() {
+	var wg sync.WaitGroup
+	nums := []int{1, 2, 3}
+
+	for _, i := range nums {
+		wg.Add(1)
+		go func() {
+			fmt.Println(i)
+		}()
+		defer wg.Done()
+	}
+
+	wg.Wait()
+	fmt.Println("All workers have completed.")
 }

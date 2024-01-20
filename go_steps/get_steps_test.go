@@ -1,10 +1,11 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetSteps(t *testing.T) {
-	fmt.Println(GetSteps(4))
+	assert.Equal(t, GetSteps(4), 2)
 }

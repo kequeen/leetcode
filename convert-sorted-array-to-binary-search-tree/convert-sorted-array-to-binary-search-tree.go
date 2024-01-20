@@ -11,7 +11,6 @@ type TreeNode struct {
 // 将有序数组转换为二叉搜索树
 func sortedArrayToBST(nums []int) *TreeNode {
 	return helper(nums, 0, len(nums)-1)
-
 }
 
 func helper(nums []int, left int, right int) *TreeNode {

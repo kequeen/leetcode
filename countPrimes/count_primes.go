@@ -5,7 +5,7 @@ package leetcode
 
 //以前是不是想过筛法，筛法真的是很有意思的方法,数学证明上比较有意思，但实际写下来貌似没那么容易写下来
 
-//还是用了比较常规的方法，但是这个方法超时了
+// 还是用了比较常规的方法，但是这个方法超时了
 func countPrimes(n int) int {
 	//数组存储下当前的质数
 	primeArr := []int{}
@@ -27,7 +27,7 @@ func countPrimes(n int) int {
 	return len(primeArr)
 }
 
-//尝试使用筛法
+// 尝试使用筛法
 func countPrimesV2(n int) int {
 	//用数组存储下是否为质数
 	isPrime := make([]bool, n)
@@ -43,7 +43,6 @@ func countPrimesV2(n int) int {
 				isPrime[j] = false
 			}
 		}
-
 	}
 	return count
 }

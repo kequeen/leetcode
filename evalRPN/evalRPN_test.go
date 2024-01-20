@@ -1,17 +1,17 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestEvalPrn(t *testing.T) {
 	tokens := []string{"2", "1", "+", "3", "*"}
-	fmt.Println(evalRPN(tokens))
-	fmt.Println(evalRPNV2(tokens))
+	assert.Equal(t, evalRPN(tokens), 9)
+	assert.Equal(t, evalRPNV2(tokens), 9)
 
 	tokens2 := []string{"4", "13", "5", "/", "+"}
-	fmt.Println(evalRPN(tokens2))
-	fmt.Println(evalRPNV2(tokens2))
-
+	assert.Equal(t, evalRPN(tokens2), 6)
+	assert.Equal(t, evalRPNV2(tokens), 6)
 }

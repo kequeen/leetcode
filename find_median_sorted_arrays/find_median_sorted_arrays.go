@@ -1,8 +1,8 @@
 package leetcode
 
-//https://leetcode.cn/problems/median-of-two-sorted-arrays/
-//两个正序数组的中位数，其实不就是归并排序取中位数么
-//代码写得比较丑，但也还是AC了
+// https://leetcode.cn/problems/median-of-two-sorted-arrays/
+// 两个正序数组的中位数，其实不就是归并排序取中位数么
+// 代码写得比较丑，但也还是AC了
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	num1Len := len(nums1)
 	num2Len := len(nums2)

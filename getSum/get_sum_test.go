@@ -1,12 +1,13 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetSum(t *testing.T) {
 	a := 3
 	b := 4
-	fmt.Println(getSum(a, b))
+	assert.Equal(t, getSum(a, b), 7)
 }

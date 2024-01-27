@@ -1,7 +1,7 @@
 package leetcode
 
-//https://leetcode.cn/problems/combination-sum/?favorite=2cktkvj
-//组合总数
+// https://leetcode.cn/problems/combination-sum/?favorite=2cktkvj
+// 组合总数
 func combinationSum(candidates []int, target int) [][]int {
 	ans := make([][]int, 0)
 	comb := []int{}

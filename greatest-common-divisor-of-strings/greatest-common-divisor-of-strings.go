@@ -2,6 +2,7 @@ package leetcode
 
 // 两个字符串的最大公约数
 // https://leetcode-cn.com/problems/greatest-common-divisor-of-strings/
+// 其实就是将问题转换为求两个数的最大公约数的过程
 func gcdOfStrings(str1 string, str2 string) string {
 	if str1+str2 != str2+str1 {
 		return ""

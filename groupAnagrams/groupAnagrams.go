@@ -4,9 +4,9 @@ import (
 	"sort"
 )
 
-//https://leetcode.cn/problems/group-anagrams/?favorite=2cktkvj
-//字母异或类分词
-//其实我理解是需要一个map去将这个进行分类
+// https://leetcode.cn/problems/group-anagrams/?favorite=2cktkvj
+// 字母异或类分词
+// 其实我理解是需要一个map去将这个进行分类
 func groupAnagrams(strs []string) [][]string {
 	res := make([][]string, 0)
 	strsMap := make(map[string][]string, 0)

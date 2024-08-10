@@ -1,23 +1,23 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMaxPathSum(t *testing.T) {
 	var root = &TreeNode{
 		Val: 0,
 	}
-	fmt.Println(maxPathSum(root))
+	assert.Equal(t, maxPathSum(root), 0)
 	root.Left = &TreeNode{
 		Val: 5,
 	}
 	root.Right = &TreeNode{Val: 6}
 	root.Right.Right = &TreeNode{Val: -1}
 
-	fmt.Println(maxPathSum(root))
-
-	fmt.Println(maxPathSumV2(root))
+	assert.Equal(t, maxPathSum(root), 11)
+	assert.Equal(t, maxPathSumV2(root), 11)
 
 }

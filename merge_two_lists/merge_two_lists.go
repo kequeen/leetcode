@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// 合并两个有序链表 是不是有点像归并排序
+// 合并两个有序链表 确实有点归并排序的意思
 // https://leetcode.cn/problems/merge-two-sorted-lists/?favorite=2cktkvj
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	h := &ListNode{}
@@ -21,18 +21,7 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 		l = l.Next
 	}
 
-	// for list1 != nil {
-	// 	l.Next = &ListNode{Val: list1.Val}
-	// 	list1 = list1.Next
-	// 	l = l.Next
-	// }
-	// for list2 != nil {
-	// 	l.Next = &ListNode{Val: list2.Val}
-	// 	list2 = list2.Next
-	// 	l = l.Next
-	// }
-
-	//这一块还有优化解法，不需要再遍历，可以直接接上
+	// 类似于归并排序，直接判断l1 或者 l2已经遍历完，剩下的直接合并完成
 	if list1 != nil {
 		l.Next = list1
 	}

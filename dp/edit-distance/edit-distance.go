@@ -33,16 +33,17 @@ func minDistance(word1 string, word2 string) int {
 	}
 	for i := 1; i <= m; i++ {
 		for j := 1; j <= n; j++ {
-			up := dp[i][j-1] + 1
-			right := dp[i-1][j] + 1
-			up_right := dp[i-1][j-1]
-			if word1[i-1] != word2[j-1] {
-				up_right = up_right + 1
+			// 如果相等
+			if word1[i-1] == word2[j-1] {
+				dp[i][j] = dp[i-1][j-1]
+			} else {
+				insert := dp[i][j-1] + 1    // 插入
+				delete := dp[i-1][j] + 1    // 删除
+				replace := dp[i-1][j-1] + 1 // 替换
+				dp[i][j] = min(min(insert, delete), replace)
 			}
-			dp[i][j] = min(min(up, right), up_right)
 		}
 	}
-
 	return dp[m][n]
 }
 

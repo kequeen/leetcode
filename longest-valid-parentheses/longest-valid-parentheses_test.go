@@ -1,17 +1,18 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestLongestValidParentheses(t *testing.T) {
 	s := "(()"
-	fmt.Println(longestValidParentheses(s))
+	assert.Equal(t, longestValidParentheses(s), 2)
 
 	s1 := ")()())"
-	fmt.Println(longestValidParentheses(s1))
+	assert.Equal(t, longestValidParentheses(s1), 4)
 
 	s2 := ""
-	fmt.Println(longestValidParentheses(s2))
+	assert.Equal(t, longestValidParentheses(s2), 0)
 }

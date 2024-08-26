@@ -1,9 +1,9 @@
 package leetcode
 
-//https://leetcode.cn/problems/longest-palindromic-substring/
-//最长回文子字符串
-//暴力方法肯定是超时的，
-//判断最长回文字符串，从当前出发，往左或者往右，其应该都相等
+// https://leetcode.cn/problems/longest-palindromic-substring/
+// 最长回文子字符串
+// 暴力方法肯定是超时的，
+// 判断最长回文字符串，从当前出发，往左或者往右，其应该都相等
 func longestPalindrome(s string) string {
 	//我是感觉中心扩散的方式比较容易理解
 	length := len(s)
@@ -28,7 +28,7 @@ func longestPalindrome(s string) string {
 	return s[start : end+1]
 }
 
-//计算回文字符串长度
+// 计算回文字符串长度
 func calPalindrome(s string, left int, right int, length int) int {
 	for left >= 0 && right < length && s[left] == s[right] {
 		left--

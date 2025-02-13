@@ -1,6 +1,6 @@
 package leetcode
 
-//硬币找零，返回需要的最少硬币数，无限找零硬币
+// 硬币找零，返回需要的最少硬币数，无限找零硬币
 func charge(money int, coins []int) int {
 	dp := make([]int, money+1)
 	//初始化
@@ -26,11 +26,4 @@ func min(a int, b int) int {
 		return b
 	}
 	return a
-}
-
-func max(a int, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }

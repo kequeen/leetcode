@@ -1,15 +1,14 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestClimbStairs(t *testing.T) {
 	n := 5
-	fmt.Println(climbStairs(n))
-	fmt.Println(climbStairsV2(n))
-
-	fmt.Println(climbStairsV3(n))
-
+	assert.Equal(t, 8, climbStairs(n))
+	assert.Equal(t, 8, climbStairsV2(n))
+	assert.Equal(t, 8, climbStairsV3(n))
 }

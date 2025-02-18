@@ -36,4 +36,9 @@ func TestAddTwoNumbersTest(t *testing.T) {
 	}
 	printList(l3)
 
+	l4 := addTwoNumbersV2(node1, node4)
+	for l4 != nil {
+		fmt.Println(l4.Val)
+		l4 = l4.Next
+	}
 }

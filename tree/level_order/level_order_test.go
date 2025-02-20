@@ -6,10 +6,6 @@ import (
 )
 
 func TestLevelOrder(t *testing.T) {
-	result := make([][]int, 0)
-	result = append(result, []int{1})
-	fmt.Println(result)
-
 	var root = &TreeNode{
 		Val: 0,
 	}
@@ -19,4 +15,5 @@ func TestLevelOrder(t *testing.T) {
 	root.Right = &TreeNode{Val: 6}
 
 	fmt.Println(levelOrder(root))
+	fmt.Println(levelOrderV2(root))
 }

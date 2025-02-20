@@ -14,7 +14,6 @@ func combinationSum(candidates []int, target int) [][]int {
 		}
 		if n == 0 {
 			//这种方式会导致结果不符合预期，因为golang本身的数组切片传的是引用,这种方式会导致后续数组切片的内容发生了变更，这个结果也会被变更
-			//ans = append(ans, comb)
 			//要采用这种直接复制数组的方式
 			ans = append(ans, append([]int(nil), comb...))
 			return
@@ -25,7 +24,7 @@ func combinationSum(candidates []int, target int) [][]int {
 		if n-candidates[idx] >= 0 {
 			comb = append(comb, candidates[idx])
 			dfs(n-candidates[idx], idx)
-			//恢复原装
+			//复原
 			comb = comb[:len(comb)-1]
 		}
 	}

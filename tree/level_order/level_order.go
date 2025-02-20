@@ -5,8 +5,10 @@ import "container/list"
 type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
-	Val   interface{}
+	Val   int
 }
+
+// 官方链接，https://leetcode.cn/problems/binary-tree-level-order-traversal/submissions/
 
 // 关于二叉树的层序遍历
 func levelOrder(root *TreeNode) [][]int {
@@ -28,7 +30,7 @@ func levelOrder(root *TreeNode) [][]int {
 			if node.Value.(*TreeNode).Right != nil {
 				q.PushBack(node.Value.(*TreeNode).Right)
 			}
-			arr = append(arr, node.Value.(*TreeNode).Val.(int))
+			arr = append(arr, node.Value.(*TreeNode).Val)
 			p.Remove(node)
 		}
 		if len(arr) != 0 {
@@ -51,7 +53,7 @@ func levelOrderV2(root *TreeNode) [][]int {
 	for len(queue) > 0 {
 		arr := make([]int, 0)
 		for _, node := range queue {
-			arr = append(arr, node.Val.(int))
+			arr = append(arr, node.Val)
 			if node.Left != nil {
 				queue = append(queue, node.Left)
 			}
